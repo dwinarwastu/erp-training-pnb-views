@@ -14,9 +14,13 @@ curl -o setup-views.sh https://raw.githubusercontent.com/[username]/erp-training
 chmod +x setup-views.sh && ./setup-views.sh
 ```
 
-**3. Compile assets and serve**
+**3. Install and build assets**
 ```bash
-npm install && npm run dev
+npm install && npm run build
+```
+
+**4. Start the server**
+```bash
 php artisan serve
 ```
 
