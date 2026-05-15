@@ -1,30 +1,51 @@
 # ERP Training PNB — Frontend Views
 
-A setup script to instantly scaffold all frontend Blade views for the ERP Subscription Service into your Laravel project.
+Setup ERP Subscription Service frontend views into your Laravel project.
 
-## Usage
+## Installation
 
-**1. Download the script into your Laravel project root**
+### 1. Open your Laravel project
+
 ```bash
-curl -o setup-views.sh https://raw.githubusercontent.com/[username]/erp-training-pnb-views/master/setup-views.sh
+cd your-laravel-project
 ```
 
-**2. Run it**
+### 2. Clone this repository
+
 ```bash
-chmod +x setup-views.sh && ./setup-views.sh
+git clone https://github.com/dwinarwastu/erp-training-pnb-views.git .erp-training-pnb-views
 ```
 
-**3. Install and build assets**
+### 3. Run the setup script
+
+#### Linux / macOS / WSL
+
 ```bash
-npm install && npm run build
+chmod +x .erp-training-pnb-views/setup-views.sh
+
+bash .erp-training-pnb-views/setup-views.sh
 ```
 
-**4. Start the server**
+#### Windows (Git Bash)
+
+```bash
+bash .erp-training-pnb-views/setup-views.sh
+```
+
+### 4. Clear Laravel cache
+
+```bash
+php artisan optimize:clear
+```
+
+### 5. Start the Laravel server
+
 ```bash
 php artisan serve
 ```
 
-## Pages
+## Routes
+
 | Route | Description |
 |-------|-------------|
 | `/customers` | Customer management |

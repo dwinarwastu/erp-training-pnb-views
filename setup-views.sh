@@ -9,7 +9,7 @@ mkdir -p resources/views/services
 mkdir -p resources/views/subscriptions
 
 # public/images/logo.svg
-cat >public/images/logo.svg <<'EOF'
+cat > public/images/logo.svg << 'EOF'
 <svg width="114" height="66" viewBox="0 0 114 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.8 12.3V3.79999H0V62.2H26.8V53.7C21.31 53.7 16.0448 51.519 12.1629 47.637C8.28088 43.755 6.1 38.49 6.1 33C6.1 27.51 8.28088 22.2448 12.1629 18.3629C16.0448 14.4809 21.31 12.3 26.8 12.3Z" fill="#394149"/>
 <path d="M26.7969 12.3V53.7C32.2869 53.7 37.5521 51.519 41.4341 47.637C45.3161 43.755 47.4969 38.49 47.4969 33C47.4969 27.51 45.3161 22.2448 41.4341 18.3629C37.5521 14.4809 32.2869 12.3 26.7969 12.3Z" fill="#394149"/>
@@ -22,7 +22,7 @@ EOF
 echo "Created: public/images/logo.svg"
 
 # resources/views/layouts/app.blade.php
-cat >resources/views/layouts/app.blade.php <<'EOF'
+cat > resources/views/layouts/app.blade.php << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,7 +177,7 @@ EOF
 echo "Created: resources/views/layouts/app.blade.php"
 
 # resources/views/components/sidebar.blade.php
-cat >resources/views/components/sidebar.blade.php <<'EOF'
+cat > resources/views/components/sidebar.blade.php << 'EOF'
 @props(['active' => ''])
 
 <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 flex flex-col min-h-screen transition-all duration-300">
@@ -224,8 +224,9 @@ EOF
 
 echo "Created: resources/views/components/sidebar.blade.php"
 
+
 # resources/views/customers/index.blade.php
-cat >resources/views/customers/index.blade.php <<'EOF'
+cat > resources/views/customers/index.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'Customers')
@@ -302,9 +303,9 @@ cat >resources/views/customers/index.blade.php <<'EOF'
     </table>
     </div>
 
-    @include('customers.create-modal')
-    @include('customers.edit-modal')
-    @include('customers.delete-modal')
+    @include('customers.create')
+    @include('customers.edit')
+    @include('customers.delete')
 @endsection
 
 @push('scripts')
@@ -501,8 +502,9 @@ EOF
 
 echo "Created: resources/views/customers/index.blade.php"
 
-# resources/views/customers/create-modal.blade.php
-cat >resources/views/customers/create-modal.blade.php <<'EOF'
+
+# resources/views/customers/create.blade.php
+cat > resources/views/customers/create.blade.php << 'EOF'
 <div class="modal fade" id="addDataModal" tabindex="-1" aria-labelledby="addDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 700px; width: 100%; overflow: visible;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0" style="overflow: visible;">
@@ -554,10 +556,10 @@ cat >resources/views/customers/create-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/customers/create-modal.blade.php"
+echo "Created: resources/views/customers/create.blade.php"
 
-# resources/views/customers/edit-modal.blade.php
-cat >resources/views/customers/edit-modal.blade.php <<'EOF'
+# resources/views/customers/edit.blade.php
+cat > resources/views/customers/edit.blade.php << 'EOF'
 <div class="modal fade" id="editDataModal" tabindex="-1" aria-labelledby="editDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 700px; width: 100%; overflow: visible;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0" style="overflow: visible;">
@@ -609,10 +611,10 @@ cat >resources/views/customers/edit-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/customers/edit-modal.blade.php"
+echo "Created: resources/views/customers/edit.blade.php"
 
-# resources/views/customers/delete-modal.blade.php
-cat >resources/views/customers/delete-modal.blade.php <<'EOF'
+# resources/views/customers/delete.blade.php
+cat > resources/views/customers/delete.blade.php << 'EOF'
 <div class="modal fade" id="deleteDataModal" tabindex="-1" aria-labelledby="deleteDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 500px; width: 100%;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0 text-center">
@@ -634,10 +636,10 @@ cat >resources/views/customers/delete-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/customers/delete-modal.blade.php"
+echo "Created: resources/views/customers/delete.blade.php"
 
 # resources/views/customers/form.blade.php
-cat >resources/views/customers/form.blade.php <<'EOF'
+cat > resources/views/customers/form.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'Add Customer')
@@ -692,8 +694,9 @@ EOF
 
 echo "Created: resources/views/customers/form.blade.php"
 
+
 # resources/views/services/index.blade.php
-cat >resources/views/services/index.blade.php <<'EOF'
+cat > resources/views/services/index.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'Services')
@@ -766,9 +769,9 @@ cat >resources/views/services/index.blade.php <<'EOF'
     </table>
     </div>
 
-    @include('services.create-modal')
-    @include('services.edit-modal')
-    @include('services.delete-modal')
+    @include('services.create')
+    @include('services.edit')
+    @include('services.delete')
 @endsection
 
 @push('scripts')
@@ -964,8 +967,9 @@ EOF
 
 echo "Created: resources/views/services/index.blade.php"
 
-# resources/views/services/create-modal.blade.php
-cat >resources/views/services/create-modal.blade.php <<'EOF'
+
+# resources/views/services/create.blade.php
+cat > resources/views/services/create.blade.php << 'EOF'
 <div class="modal fade" id="addDataModal" tabindex="-1" aria-labelledby="addDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 700px; width: 100%; overflow: visible;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0" style="overflow: visible;">
@@ -1013,10 +1017,10 @@ cat >resources/views/services/create-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/services/create-modal.blade.php"
+echo "Created: resources/views/services/create.blade.php"
 
-# resources/views/services/edit-modal.blade.php
-cat >resources/views/services/edit-modal.blade.php <<'EOF'
+# resources/views/services/edit.blade.php
+cat > resources/views/services/edit.blade.php << 'EOF'
 <div class="modal fade" id="editDataModal" tabindex="-1" aria-labelledby="editDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 700px; width: 100%; overflow: visible;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0" style="overflow: visible;">
@@ -1064,10 +1068,10 @@ cat >resources/views/services/edit-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/services/edit-modal.blade.php"
+echo "Created: resources/views/services/edit.blade.php"
 
-# resources/views/services/delete-modal.blade.php
-cat >resources/views/services/delete-modal.blade.php <<'EOF'
+# resources/views/services/delete.blade.php
+cat > resources/views/services/delete.blade.php << 'EOF'
 <div class="modal fade" id="deleteDataModal" tabindex="-1" aria-labelledby="deleteDataModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 500px; width: 100%;">
         <div class="modal-content bg-white rounded-xl p-8 shadow-lg border-0 text-center">
@@ -1089,10 +1093,10 @@ cat >resources/views/services/delete-modal.blade.php <<'EOF'
 </div>
 EOF
 
-echo "Created: resources/views/services/delete-modal.blade.php"
+echo "Created: resources/views/services/delete.blade.php"
 
 # resources/views/services/form.blade.php
-cat >resources/views/services/form.blade.php <<'EOF'
+cat > resources/views/services/form.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'Add Service')
@@ -1143,8 +1147,9 @@ EOF
 
 echo "Created: resources/views/services/form.blade.php"
 
+
 # resources/views/subscriptions/index.blade.php
-cat >resources/views/subscriptions/index.blade.php <<'EOF'
+cat > resources/views/subscriptions/index.blade.php << 'EOF'
 @extends('layouts.app')
 
 @section('title', 'Subscriptions')
@@ -1432,8 +1437,9 @@ EOF
 
 echo "Created: resources/views/subscriptions/index.blade.php"
 
+
 # resources/views/subscriptions/form.blade.php
-cat >resources/views/subscriptions/form.blade.php <<'EOF'
+cat > resources/views/subscriptions/form.blade.php << 'EOF'
 <form>
     <div class="mb-4">
         <label class="block font-semibold text-gray-900 mb-2">Customer</label>
@@ -1519,7 +1525,7 @@ EOF
 echo "Created: resources/views/subscriptions/form.blade.php"
 
 # routes/web.php
-cat >routes/web.php <<'EOF'
+cat > routes/web.php << 'EOF'
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -1541,7 +1547,7 @@ EOF
 echo "Created: routes/web.php"
 
 # resources/css/app.css
-cat >resources/css/app.css <<'EOF'
+cat > resources/css/app.css << 'EOF'
 @import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -1615,4 +1621,15 @@ echo "Created: resources/css/app.css"
 
 # Done
 echo ""
-echo "Setup complete!"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+echo "Copying compiled assets..."
+rm -rf public/build
+mkdir -p public
+cp -r "$SCRIPT_DIR/public-build" public/build
+echo "Created: public/build"
+
+echo "Cleaning installer..."
+rm -rf "$SCRIPT_DIR"
+
+echo "Setup completed successfully!"
