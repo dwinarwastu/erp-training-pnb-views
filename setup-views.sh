@@ -1621,15 +1621,24 @@ echo "Created: resources/css/app.css"
 
 # Done
 echo ""
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Copying compiled assets..."
+
+if [ ! -d "$SCRIPT_DIR/public-build" ]; then
+    echo "Error: public-build folder not found."
+    exit 1
+fi
+
 rm -rf public/build
 mkdir -p public
 cp -r "$SCRIPT_DIR/public-build" public/build
+
 echo "Created: public/build"
-
-echo "Cleaning installer..."
-rm -rf "$SCRIPT_DIR"
-
 echo "Setup completed successfully!"
+
+if [ "$(basename "$SCRIPT_DIR")" = ".erp-training-pnb-views" ]; then
+    echo "Cleaning installer..."
+    rm -rf "$SCRIPT_DIR"
+fi
