@@ -18,16 +18,6 @@ git clone https://github.com/dwinarwastu/erp-training-pnb-views.git .erp-trainin
 
 ### 3. Run the setup script
 
-#### Linux / macOS / WSL
-
-```bash
-chmod +x .erp-training-pnb-views/setup-views.sh
-
-bash .erp-training-pnb-views/setup-views.sh
-```
-
-#### Windows (Git Bash)
-
 ```bash
 bash .erp-training-pnb-views/setup-views.sh
 ```
